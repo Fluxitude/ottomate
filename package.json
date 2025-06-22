@@ -1,0 +1,34 @@
+{
+  "name": "v1",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "tooling/*"
+  ],
+  "scripts": {
+    "build": "turbo build",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo clean",
+    "dev": "turbo dev --parallel",
+    "dev:frontend": "turbo dev --parallel --filter=!@v1/api",
+    "dev:web": "turbo dev --filter=@v1/web",
+    "dev:jobs": "turbo jobs --filter=@v1/jobs",
+    "dev:app": "turbo dev --filter=@v1/app",
+    "start:web": "turbo start --filter=@v1/web",
+    "start:app": "turbo start --filter=@v1/app",
+    "test": "turbo test --parallel",
+    "format": "biome format --write .",
+    "lint": "turbo lint && bun lint:repo",
+    "lint:repo": "bunx sherif@latest",
+    "lint:repo:fix": "bunx sherif@latest --fix",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.2",
+    "@t3-oss/env-nextjs": "^0.13.8",
+    "turbo": "2.5.4",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "bun@1.2.16"
+}

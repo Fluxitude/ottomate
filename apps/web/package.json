@@ -1,0 +1,30 @@
+{
+  "name": "@v1/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "clean": "git clean -xdf .next .turbo node_modules",
+    "lint": "biome lint",
+    "format": "biome format --write .",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
+    "@v1/analytics": "workspace:*",
+    "@v1/ui": "workspace:*",
+    "geist": "^1.4.2",
+    "next": "15.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "usehooks-ts": "^3.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5.8.3"
+  }
+}
